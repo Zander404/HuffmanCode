@@ -1,13 +1,12 @@
 from Huffman import HuffmanEncoding, HuffmanDecoding
-from arvroreBinariaTAD import reader, writer
+from dataManage import *
 
 the_data = reader('test.txt')
+writer('text_original.doido', convertStringForBinary(the_data))
 encoding, the_tree = HuffmanEncoding(the_data)
 decoding = HuffmanDecoding(encoding, the_tree)
 print("Arquivo compactado", encoding)
 print("Arquivo descompactado:", decoding)
-print("Espaco usado depois de compactado(em bits):", len(encoding))
+
 writer('test.zin', encoding)
-
-
-
+print(compatRate(len(encoding), len(decoding)))
