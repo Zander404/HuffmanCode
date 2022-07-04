@@ -10,3 +10,10 @@ print("Arquivo descompactado:", decoding)
 
 writer('test.zin', encoding)
 compatRate(len(encoding), len(' '.join(map(bin, bytearray(the_data, "utf-8")))))
+
+# descompactação
+
+new_data = reader('test.zin')
+decoding = HuffmanDecoding(new_data, the_tree)
+
+print("Arvore de novo: ", decoding)
