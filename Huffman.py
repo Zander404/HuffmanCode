@@ -124,3 +124,4 @@ def HuffmanDecoding(encodedData, huffmanTree):
     return string
 
 
+

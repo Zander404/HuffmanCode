@@ -11,3 +11,4 @@ print("Tamanho do arquivo:", len(the_data))
 print("Tamanho do arquivo comprimido:", len(encoding))
 writer('test.zin', encoding)
 
+
