@@ -1,4 +1,6 @@
 #leitura de arquivo
+from math import ceil
+
 
 def reader(file):
     with open(file, 'r') as f:
@@ -13,8 +15,11 @@ def writer(file, data):
 
 #comparador de compactacao
 def compatRate(compact, descompact):
-    threeway = (compact*100)/descompact
-    return threeway
+    print("Compactacao:", compact)
+    print("Descompactacao:", descompact)
+    r = (compact*100)
+    threeway = ceil(r / descompact)
+    return print('taxa de compactacao de: ', threeway, "% ")
 
 
 #convesor para binário

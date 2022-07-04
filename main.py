@@ -9,4 +9,4 @@ print("Arquivo compactado", encoding)
 print("Arquivo descompactado:", decoding)
 
 writer('test.zin', encoding)
-print(compatRate(len(encoding), len(decoding)))
+compatRate(len(encoding), len(' '.join(map(bin, bytearray(the_data, "utf-8")))))
