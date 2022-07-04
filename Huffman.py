@@ -63,8 +63,8 @@ def TotalGain(the_data, coding):
         the_count = the_data.count(symbol)
         # calculating how many bit is required for that symbol in total
         afterCompression += the_count * len(coding[symbol])
-    print("Space usage before compression (in bits):", beforeCompression)
-    print("Space usage after compression (in bits):",  afterCompression)
+    print("Espaço usado antes de ser compactado (em bits):", beforeCompression)
+    print("Espaco usado depois de compactado(em bits):",  afterCompression)
 
 def HuffmanEncoding(the_data):
     symbolWithProbs = CalculateProbability(the_data)
