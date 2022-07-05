@@ -15,9 +15,9 @@ def writer(file, data):
 #escrita de arquivo
 def writerD(file, data, the_tree):
     with open(file, 'a') as f:
-        line1 = f.write(data)
-        line2 = f.write('\n')
-        line3 = f.write(the_tree)
+        f.write(data)
+        f.write('\n')
+
 
 
 #comparador de compactacao

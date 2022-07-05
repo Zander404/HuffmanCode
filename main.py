@@ -8,7 +8,8 @@ decoding = HuffmanDecoding(encoding, the_tree)
 print("Arquivo compactado", encoding)
 print('\n')
 compatRate(len(encoding), len(' '.join(format(c, 'b') for c in bytearray(the_data, "utf-8"))))
-print("Arquivo descompactado:", decoding)
+#print("Arquivo descompactado:", decoding)
+writer('test.zin', encoding)
 
 
 # descompactação
