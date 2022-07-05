@@ -56,7 +56,7 @@ def OutputEncoded(the_data, coding):
 """ A supporting function in order to calculate the space difference between compressed and non compressed data"""
 def TotalGain(the_data, coding):
     # total bit space to store the data before compression
-    beforeCompression = len(' '.join(map(bin, bytearray(the_data, "utf-8"))))
+    beforeCompression = len(' '.join(format(c, 'b') for c in bytearray(the_data, "utf-8")))
     afterCompression = 0
     the_symbols = coding.keys()
     for symbol in the_symbols:
@@ -67,6 +67,7 @@ def TotalGain(the_data, coding):
     print("Espaco usado depois de compactado (em bits):",  afterCompression)
 
 def HuffmanEncoding(the_data):
+
     symbolWithProbs = CalculateProbability(the_data)
     the_symbols = symbolWithProbs.keys()
     the_probabilities = symbolWithProbs.values()
@@ -102,7 +103,7 @@ def HuffmanEncoding(the_data):
     huffmanEncoding = CalculateCodes(the_nodes[0])
     print("symbols with codes", huffmanEncoding)
     TotalGain(the_data, huffmanEncoding)
-    encodedOutput = OutputEncoded(the_data,huffmanEncoding)
+    encodedOutput = OutputEncoded(the_data, huffmanEncoding)
     return encodedOutput, the_nodes[0]
 
 def HuffmanDecoding(encodedData, huffmanTree):

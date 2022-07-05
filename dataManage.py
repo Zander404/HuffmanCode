@@ -7,16 +7,21 @@ def reader(file):
         return f.read()
 
 
-#escrita de arquivo
 def writer(file, data):
     with open(file, 'w') as f:
-        f.write(data)
+        return f.write(data)
+
+
+#escrita de arquivo
+def writerD(file, data, the_tree):
+    with open(file, 'a') as f:
+        line1 = f.write(data)
+        line2 = f.write('\n')
+        line3 = f.write(the_tree)
 
 
 #comparador de compactacao
 def compatRate(compact, descompact):
-    print("Compactacao:", compact)
-    print("Descompactacao:", descompact)
     r = (compact*100)
     threeway = ceil(r / descompact)
     return print('taxa de compactacao de: ', threeway, "% ")
@@ -25,5 +30,6 @@ def compatRate(compact, descompact):
 #convesor para binário
 
 def convertStringForBinary(the_data):
-    binary_converted = ' '.join(map(bin, bytearray(the_data, "utf-8")))
+    binary_converted = ' '.join(format(c, 'b') for c in bytearray(the_data, "utf-8"))
     return binary_converted
+
